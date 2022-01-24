@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lateral-nomad-339206",
+  "private_key_id": "3a4d550fdf09a0a38cac6cb34e22b41c6abf39ab",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDGXUyp5pkJg+8i\nzKCXafWg+F7Du7Jdf0J78+qXqUnR9upbS9+Jh+LWFjO9VaJChBypxSPeFrUJDkMI\nJbn5QP3hhBYnHWSmcmcwMDF7AzRJ7rwdmW8tbFlCpqWEmS7IqnHYksCAukt6CDvy\nnfqa8+MtHir23PQKoHvvuVdBOsRgy2uhRWBrxAqezxwF/zuRwLJOf/wN4RfOkr3f\n2QNVkn7CTZxBhnUKE5YyMCai302DLP+ZI3bvVLaq30/5FFjr+tqMcnMLMDRtnTA8\nmiQ92TMwInOfrCtCJSW9j9jrC7U8q3GgkFYysuq1grHPHT5dwvp0ZlQTusLWKQ83\ntyx2AlWNAgMBAAECggEADEPiFOJLhaVZALWW223jkHGzCFa/e1z+SyREld6TkC48\nhOse1gXnLnYeel9EYmkBTbUBF/8e8AGn/uW4R1Nvr0VHymDco5cQzs+4C4Nh9Q1U\nJ99gGranmUGtG9MN673wPqQqT3tVZeUC8eg3QeQBIL3MCcoVM+AC8cprvP6JfHOT\nk57jex7NrOATVsc9DbuH0h7/jKCnYyW9hqnPjlEsxZxPWxZHg0GxdfLAvxjqRb7A\nDSSdACA4TMR4wxDXftq+Sre4iwUuCv272F6kLokatoi7fiAjqsbVFigT/fpVYS/m\nI4hGr0rOvz90U+qBnu8cAyzS11QOQDg1AkOGmO79MQKBgQDxhrHz4f2JFytqALN6\nWF2iAd+YzTQpT41WT5+zG8SzL7jUP7Z4PenNrvIT9iFAzVl3sS3pWnDXU6Ekpnoq\nex01jTwDsbbEvlS0pqEUmmL7ua8K9WPSB0gqCIBan0ersOlwTZEAu5wM7/tpPRh5\n1KFhZGhFYSVRKAErtZSfWS4N0QKBgQDSQHOLvvdmfturpjaF24UMX3bKycSK0aVJ\n+NoEI7WwO0CulfLioAXKnr3Y8Ubc5ILSeZEQgxOjItJ8Z7Y+MMqeonCOGbN9ahba\nf9jGiLyP1eE4gNz69nHpHmjsdBURZONDC84HK+ls4/tUrTG647WWlKdtj4tIoYH6\nMJ8b6/lO/QKBgF9MmXy0h/iGxt+NpUO6CD/7Y0GEfndqZ0dOJaJja4qUYuaEuTfa\nnh1FUUllDZvnKs0agRYZVHryCZxPf9axO0Y9ExgWEBqzSvL46IgbnsDadGHrj1Z4\n/xVuw05+mKX7KTDhujxCyoEkU9wjejvgFUk7eBUgDrxl/4hCnoD9jDlxAoGBAKn1\nIbIYh8LZz1cdADwKbK3Iya05luAkgjmeqRXpi+hOrYWzfuiFNMlKsuqYd5D+Q2ZC\nkOpJGumnr4CTEbWKGXBMnTGxQu+hf6HW8PPj+pFG8k2LlZZk+0XXqDdjytgJttAu\nzbfsXkAAtt0HOAj8I4D637Dn9U6cCAanoSagBSM9AoGBAOjz2XDz/c717Idcn++Q\nGBs+j1qRE0W5mOI8xzy4HRgXA43nv6IGYusmJ5MIC8ht5LYaBRrYZpOMhFt/jPZa\ncpKDbCgqsECynCjLub3DsP+zzQWlNYG9JyN1WwGKKQXcOAbRLxs6KMWVFpxfn5cd\nFkIKvTeRrBheCO5lGowe8M7A\n-----END PRIVATE KEY-----\n",
+  "client_email": "main-934@lateral-nomad-339206.iam.gserviceaccount.com",
+  "client_id": "102460059598176898220",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/main-934%40lateral-nomad-339206.iam.gserviceaccount.com"
+}
