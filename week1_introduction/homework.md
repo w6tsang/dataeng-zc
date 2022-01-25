@@ -241,6 +241,14 @@ How many taxi trips were there on January 15?
 
 Consider only trips that started on January 15.
 
+> SELECT COUNT(*) 
+from yellow_taxi_data
+where DATE(tpep_pickup_datetime) = '2021-01-15'
+```
+    count
+0	53024
+
+```
 
 ## Question 4. Largest tip for each day
 
@@ -251,6 +259,66 @@ Use the pick up time for your calculations.
 
 (note: it's not a typo, it's "tip", not "trip")
 
+> SELECT 
+    DATE(tpep_pickup_datetime) as day,
+    max(tip_amount) as largest_tip
+from yellow_taxi_data
+group by 1
+order by 1
+```
+	day	largest_tip
+0	2008-12-31	0.00
+1	2009-01-01	0.00
+2	2020-12-31	4.08
+3	2021-01-01	158.00
+4	2021-01-02	109.15
+5	2021-01-03	369.40
+6	2021-01-04	696.48
+7	2021-01-05	151.00
+8	2021-01-06	100.00
+9	2021-01-07	95.00
+10	2021-01-08	100.00
+11	2021-01-09	230.00
+12	2021-01-10	91.00
+13	2021-01-11	145.00
+14	2021-01-12	192.61
+15	2021-01-13	100.00
+16	2021-01-14	95.00
+17	2021-01-15	99.00
+18	2021-01-16	100.00
+19	2021-01-17	65.00
+20	2021-01-18	90.00
+21	2021-01-19	200.80
+22	2021-01-20	1140.44
+23	2021-01-21	166.00
+24	2021-01-22	92.55
+25	2021-01-23	100.00
+26	2021-01-24	122.00
+27	2021-01-25	100.16
+28	2021-01-26	250.00
+29	2021-01-27	100.00
+30	2021-01-28	77.14
+31	2021-01-29	75.00
+32	2021-01-30	199.12
+33	2021-01-31	108.50
+34	2021-02-01	1.54
+35	2021-02-22	1.76
+
+```
+
+> SELECT 
+    DATE(tpep_pickup_datetime) as day,
+    max(tip_amount) as largest_tip
+from yellow_taxi_data
+group by 1
+order by 2 DESC
+LIMIT 1
+```
+    day	        largest_tip
+0	2021-01-20	1140.44
+35	2021-02-22	1.76
+
+```
 
 ## Question 5. Most popular destination
 
@@ -261,6 +329,26 @@ Use the pick up time for your calculations.
 
 Enter the zone name (not id). If the zone name is unknown (missing), write "Unknown" 
 
+> SELECT 
+    CASE WHEN zones."Zone" IS NULL
+        THEN 'Unknown'
+        ELSE zones."Zone" END as destination,
+    yellow_taxi_data."DOLocationID" as destination_id,
+    count(*) as num_trips
+from yellow_taxi_data
+LEFT JOIN zones
+ON yellow_taxi_data."DOLocationID" = zones."LocationID"
+
+where DATE(tpep_pickup_datetime) = '2021-01-14'
+group by 1,2
+ORDER by 3 DESC
+LIMit 1
+```
+
+destination	destination_id	num_trips
+0	Upper East Side North	236	6008
+
+```
 
 ## Question 6. Most expensive locations
 
@@ -275,6 +363,26 @@ For example:
 
 If any of the zone names are unknown (missing), write "Unknown". For example, "Unknown / Clinton East". 
 
+
+> SELECT 
+    "PULocationID",
+    "DOLocationID",
+    CONCAT(COALESCE(zpu."Zone",'Unknown'),'/',COALESCE(zdo."Zone",'Unknown')) as route,
+    AVG(total_amount) as average_price
+from yellow_taxi_data
+LEFT JOIN zones zdo
+ON yellow_taxi_data."DOLocationID" = zdo."LocationID"
+LEFT JOIN zones zpu
+ON yellow_taxi_data."PULocationID" = zpu."LocationID"
+group by 1,2,3
+ORDER by 4 DESC
+LIMIT 1
+```
+
+	PULocationID	DOLocationID	route	average_price
+0	4	265	Alphabet City/Unknown	2292.4
+
+```
 
 ## Submitting the solutions
 
