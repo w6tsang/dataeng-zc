@@ -1,4 +1,5 @@
 *.Identifier
+env/
 __pycache__/
 .venv/
 .vscode/
