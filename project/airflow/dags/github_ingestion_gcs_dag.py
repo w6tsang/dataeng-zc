@@ -14,8 +14,8 @@ from datetime import datetime
 
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
-
-dataset_file = '{{ execution_date.strftime(\'%Y-%m-%d-%H\') }}.json.gz'
+#https://data.gharchive.org/2015-01-01-15.json.gz
+dataset_file = '{{ execution_date.strftime(\'%Y-%m-%d-%-H\') }}.json.gz'
 dataset_url = f"https://data.gharchive.org/{dataset_file}"
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'stg_github')
@@ -51,12 +51,12 @@ default_args = {
 
 # NOTE: DAG declaration - using a Context Manager (an implicit way)
 with DAG(
-    dag_id="data_ingestion_gcs_q1",
-    schedule_interval="@monthly",
-    start_date = datetime(2019,1,1),
+    dag_id="data_ingestion_github",
+    schedule_interval="@hourly",
+    start_date = datetime(2022,3,21),
     default_args=default_args,
     catchup=True,
-    max_active_runs=3,
+    max_active_runs=2,
     tags=['dtc-de'],
 ) as dag:
 
@@ -75,24 +75,9 @@ with DAG(
         },
     )
 
-    bigquery_external_table_task = BigQueryCreateExternalTableOperator(
-        task_id="bigquery_external_table_task",
-        table_resource={
-            "tableReference": {
-                "projectId": PROJECT_ID,
-                "datasetId": BIGQUERY_DATASET,
-                "tableId": "external_table",
-            },
-            "externalDataConfiguration": {
-                "sourceFormat": "PARQUET",
-                "sourceUris": [f"gs://{BUCKET}/raw/{dataset_file}"],
-            },
-        },
-    )
-
     clean_up_files_task = BashOperator(
         task_id="clean_up_files_task",
         bash_command=f"rm {path_to_local_home}/{dataset_file}"
     )
 
-    download_dataset_task >> local_to_gcs_task >> bigquery_external_table_task >> clean_up_files_task
+    download_dataset_task >> local_to_gcs_task >> clean_up_files_task
