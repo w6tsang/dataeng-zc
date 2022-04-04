@@ -7,7 +7,7 @@ We would like to understand what kind of activity Github sees on a daily basis. 
 The dataset chosen is [GitHub Archive](https://www.gharchive.org/).
 
 
-[Dashboard](https://datastudio.google.com/s/vm-)
+[Dashboard](https://datastudio.google.com/reporting/c07c279b-57d5-4cd2-add9-2cbef5c37aa2)
 
 
 ## Project Description
