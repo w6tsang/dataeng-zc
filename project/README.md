@@ -6,9 +6,17 @@ We would like to understand what kind of activity Github sees on a daily basis. 
 
 The dataset chosen is [GitHub Archive](https://www.gharchive.org/).
 
+
+[Dashboard](https://datastudio.google.com/s/vm-)
+
+
 ## Project Description
 
 This project implements an ELT pipeline extracting the data from github, uploading to GCS and then transformed using BigQuery. A dashboard is created to illustrate the findings.
+
+
+[GCP Instructions](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/week_1_basics_n_setup/1_terraform_gcp/2_gcp_overview.md#initial-setup)
+
 
 ## Setup
 
@@ -54,7 +62,7 @@ Update the docker compose file with your GCP paths and credentials. In the airfl
 - dbt_run
     - Runs dbt models
 
-
+https://datastudio.google.com/s/vm-gm3gI0zk
 
 
 
