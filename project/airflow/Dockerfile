@@ -9,6 +9,8 @@ RUN apt-get update -qq && apt-get install vim -qqq
 # git gcc g++ -qqq
 
 COPY requirements.txt .
+COPY ../github github
+COPY ../github/profiles/profiles.yml .dbt/profiles.yml
 RUN pip install --no-cache-dir -r requirements.txt
 
 

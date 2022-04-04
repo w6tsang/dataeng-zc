@@ -74,6 +74,8 @@ x-airflow-common:
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
     - ~/.google/credentials/:/.google/credentials:ro
+    - ../github:/opt/airflow/github
+    - ../github/profiles/:/.dbt/:ro
 
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
