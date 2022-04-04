@@ -6,7 +6,7 @@ sources:
       #For bigquery:
       database: lateral-nomad-339206
 
-      schema: stg_github
+      schema: github_data_all
       tables:
-        - name: github_data
+        - name: github_all
 

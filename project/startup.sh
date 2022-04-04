@@ -17,7 +17,7 @@ sudo gpasswd -a $USER docker
 sudo service docker restart
 mkdir ~/bin
 cd ~/bin
-wget <compose_url> -O docker-compose
+wget https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-x86_64 -O docker-compose
 chmod +x docker-compose
 ./docker-compose version
 cd ~
