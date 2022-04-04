@@ -1,0 +1,12 @@
+
+version: 2
+
+sources:
+    - name: staging
+      #For bigquery:
+      database: lateral-nomad-339206
+
+      schema: stg_github
+      tables:
+        - name: github_data
+

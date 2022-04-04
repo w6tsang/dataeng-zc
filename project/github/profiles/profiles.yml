@@ -1,0 +1,25 @@
+bq-dbt-workshop:
+  outputs:
+    dev:
+      dataset: dbt_ny_dev
+      fixed_retries: 1
+      keyfile: /home/wtsang/.google/credentials/google_dbt.json
+      location: europe-west6
+      method: service-account
+      priority: interactive
+      project: lateral-nomad-339206
+      threads: 4
+      timeout_seconds: 300
+      type: bigquery
+    prod:
+      dataset: production
+      fixed_retries: 1
+      keyfile: /home/wtsang/.google/credentials/google_dbt.json
+      location: europe-west6
+      method: service-account
+      priority: interactive
+      project: lateral-nomad-339206
+      threads: 4
+      timeout_seconds: 300
+      type: bigquery
+  target: dev

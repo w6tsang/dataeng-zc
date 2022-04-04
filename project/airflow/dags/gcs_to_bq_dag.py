@@ -14,7 +14,7 @@ BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'github_data_all')
 
 DATASET = "github_all"
 INPUT_PART = "raw"
-INPUT_FILETYPE = "json.gz"
+INPUT_FILETYPE = "parquet"
 
 default_args = {
     "owner": "airflow",
@@ -25,8 +25,8 @@ default_args = {
 
 # NOTE: DAG declaration - using a Context Manager (an implicit way)
 with DAG(
-    dag_id="gcs_2_bq_dag",
-    schedule_interval="15 * * * *",
+    dag_id="gcs_to_bq_dag",
+    schedule_interval="55 * * * *",
     default_args=default_args,
     catchup=False,
     max_active_runs=1,
@@ -35,7 +35,7 @@ with DAG(
 
 
     move_files_gcs_task = GCSToGCSOperator(
-        task_id=f'move_{colour}_{DATASET}_files_task',
+        task_id=f'move_{DATASET}_files_task',
         source_bucket=BUCKET,
         source_object=f'{INPUT_PART}/*.{INPUT_FILETYPE}',
         destination_bucket=BUCKET,
