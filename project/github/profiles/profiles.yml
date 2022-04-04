@@ -3,22 +3,22 @@ bq-dbt-workshop:
     dev:
       dataset: github_dev
       fixed_retries: 1
-      keyfile: /home/<user>/.google/credentials/google_dbt.json
+      keyfile: /.google/credentials/google_dbt.json
       location: europe-west6
       method: service-account
       priority: interactive
-      project: <PROJECT NAME>
+      project: lateral-nomad-339206
       threads: 4
       timeout_seconds: 300
       type: bigquery
     prod:
       dataset: github_prod
       fixed_retries: 1
-      keyfile: /home/<user>/.google/credentials/google_dbt.json
+      keyfile: /.google/credentials/google_dbt.json
       location: europe-west6
       method: service-account
       priority: interactive
-      project: <PROJECT NAME>
+      project: lateral-nomad-339206
       threads: 4
       timeout_seconds: 300
       type: bigquery
